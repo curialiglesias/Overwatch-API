@@ -1,0 +1,47 @@
+{
+  "name": "pw_p2",
+  "version": "1.0.0",
+  "description": "Projecte 2 de l'assignatura Projectes Web 1 fet pel grup 9",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "clean": "rd /s /q esm dist lib .cache>nul 2>&1|echo.>nul",
+    "prehtml-minifier": "del /S /Q dist",
+    "html-minifier": "html-minifier --input-dir src --output-dir dist --file-ext html --remove-comments --collapse-whitespace --minify-css true",
+    "precss-minify": "mkdir dist\\css\\pages lib .cache>nul 2>&1|echo.>nul",
+    "css-minify": "css-minify -d src/css/pages -o dist/css/pages",
+    "postcss-minify": "rename dist\\css\\pages\\style.min.css style.css",
+    "check-html-links": "check-html-links",
+    "move-js": "xcopy src\\js dist\\js /s /e /i /k",
+    "app": "npm install && npm run build && npm start",
+    "prebuild": "npm run clean",
+    "build": "npm run html-minifier && npm run css-minify && npm run move-js",
+    "postbuild": "npm run check-html-links"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://curialiglesias@bitbucket.org/JonathanBarragan/pw_p2.git"
+  },
+  "keywords": [
+    "Projectes",
+    "Web"
+  ],
+  "author": "Curial Iglesias, Albert Armengol, Jonathan Barragan.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://bitbucket.org/JonathanBarragan/pw_p2/issues"
+  },
+  "homepage": "https://bitbucket.org/JonathanBarragan/pw_p2#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "minify-all-js": "^0.1.7"
+  },
+  "devDependencies": {
+    "check-html-links": "^0.2.3",
+    "cors": "^2.8.5",
+    "css-minify": "^2.0.0",
+    "html-minifier": "^4.0.0",
+    "uglify-js": "^3.14.4"
+  }
+}

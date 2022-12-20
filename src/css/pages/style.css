@@ -1,0 +1,224 @@
+/* Autor: Curial Iglesias Clua */
+
+/* Reset */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* General */
+html, body{
+    font-family: Arial;
+    margin: 10px;
+    block-size: auto;
+}
+
+/* Header */
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+header img{
+    width: 70px;
+    position: absolute;
+    left: 50px;
+}
+
+h1{
+    font-size: 3em;
+    margin: auto;
+}
+
+/* Main */
+/* Buscador */
+main{
+    background-color: grey;
+    padding: 20px 0 20px 0;
+    block-size: auto;
+    min-height: 100vh;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#search{
+    background-color: greenyellow;
+    width: 100px;
+    height: 30px;
+    font-size: 1em;
+    border: none;
+}
+
+input{
+    width: 300px;
+    height: 30px;
+    font-size: 1.2em;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: none;
+}
+
+#errorMessage{
+    text-align: center;
+    padding: 10px;
+    padding-bottom: 20px;
+    color: maroon;
+}
+
+/* Herois */
+.hero, .heroExpand{
+    background-color: whitesmoke;
+    display: flex;
+    width: 500px;
+    height: 220px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    justify-content: space-between;
+}
+
+.heroExpand{
+    width: 1000px;
+    height: 500px;
+}
+
+.hero img {
+    height: 100%;
+}
+
+.heroExpand img{
+    width: 290.318px;
+}
+
+.name{
+    color: black;
+    font-size: 2.5em;
+    margin: 20px;
+}
+
+.role{
+    color: black;
+    font-size: 2em;
+    margin: 20px;
+}
+
+.message h3{
+    text-align: center;
+    font-size: 2em;
+}
+.message p{
+    padding: 20px;
+    line-height: 30px;
+}
+
+.btn-more{
+    background-color: transparent;
+    color: orange;
+    font-size: 4em;
+    border: none;
+    align-self: flex-end;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+
+.anim{
+    animation: anim_rotate 1.2s linear infinite;
+}
+
+@keyframes anim_rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Media querys */
+@media(max-width: 600px) {
+    header{
+        flex-direction: column;
+    }
+
+    header img{
+        position: relative;
+        left: 0px;
+        padding-bottom: 10px;
+    }
+
+    form{
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+}
+
+@media(max-width: 1050px) {
+    .hero {
+        width: 400px;
+        height: 176px;
+    }
+    .heroExpand{
+        width: 400px;
+        height: auto;
+        flex-direction: column;
+    }
+    
+    .heroExpand img{
+        margin: auto;
+    }
+
+    .name, .role{
+        text-align: center;
+    }
+
+    .message h3, .message p{
+        margin: auto;
+        width: auto;
+        padding-bottom: 0px;
+    }
+    
+    .btn-more{
+        align-self: flex-end;
+        justify-self: center;
+        height: 50px;
+        width: 50px;
+        padding: 0px;
+        padding-bottom: 70px;
+    }
+
+    .message p{
+        padding-top: 10px;
+    }
+}
+
+@media(max-width: 460px) {
+    .hero{
+        width: 300px;
+        height: 132px;
+    }
+    .heroExpand{
+        width: 300px;
+        height: auto;
+    }
+    
+    .name{
+        font-size: 1.8em;
+        margin-bottom: 10px;
+    }
+
+    .role{
+        font-size: 1.3em;
+        margin-top: 0px;
+    }
+    
+    .message h3{
+        font-size: 1.6em;
+    }
+}
